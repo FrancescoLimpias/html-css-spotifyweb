@@ -1,0 +1,67 @@
+/* 
+    Set of utility ruleset of css,
+    may be useful.
+
+    F.L.
+*/
+
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+    /* Testing Mode  */
+    /* border: 1px dashed orange; */
+}
+
+img{
+    max-width: 100%;
+}
+
+.button{
+    padding: 6px 1em;
+    border-radius: 20px;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+/* COMMON */
+
+.pager{
+    width: 100%;
+}
+.pager > *{
+    margin: 0 auto;
+    padding-right: 4%;
+    padding-left: 4%;
+
+    max-width: 1200px;
+}
+.pager > .narrow{
+    padding-right: 6%;
+    padding-left: 6%;
+}
+.pager > .xs.narrow{
+    padding-right: 8%;
+    padding-left: 8%;
+}
+.pager > .xxs.narrow{
+    padding-right: 12%;
+    padding-left: 12%;
+}
+
+
+.link-list{
+    list-style: none;
+    padding-inline-start: 0;
+}
+.link-list a{
+    text-decoration: none;
+    color: currentColor;
+}
