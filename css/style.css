@@ -7,11 +7,11 @@
     --scroll-view-height: calc(100vh - var(--controls-height));
     --left-bar-width: 265px;
 
-
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
+    color: white;
     /* background-color: white; */
 
     display: flex;
@@ -23,14 +23,18 @@ body {
 
 /* LEFT-BAR */
 #left-bar{
+    --left-bar-padding: 20px;
+
     width: var(--left-bar-width);
     height: var(--scroll-view-height);
 
+    font-size: 1rem;
     background-color: black;
 }
 
+/* header */
 #site-header{
-    padding: 10px;
+    padding: var(--left-bar-padding);
 }
 #site-header .wide-view{
     width: 70%;
@@ -38,6 +42,29 @@ body {
 #site-header .small{
     display: none;
     width: 100%;
+}
+
+/* main-nav */
+#main-nav{
+    --spacer: 0.5rem;
+}
+#main-nav li{
+    padding-left: var(--left-bar-padding);
+    border-left: 3px solid black;
+}
+#main-nav li:hover{
+    border-color:#acff2f7e;
+}
+#main-nav li.active{
+    border-color: #adff2f;
+}
+#main-nav a{
+    display: flex;
+    align-items: center;
+}
+#main-nav img{
+    max-height: 2rem;
+    margin-right: 0.2rem;z
 }
 
 

@@ -56,6 +56,10 @@ img{
     padding-left: 12%;
 }
 
+.height-spacer > *:not(.self-spaced){
+    margin-bottom: var(--spacer);
+}
+
 
 .link-list{
     list-style: none;
