@@ -1,7 +1,64 @@
 /* GENERAL SETUP  */
+
+:root{
+
+    /* layout sizing */
+    --controls-height: 100px;
+    --scroll-view-height: calc(100vh - var(--controls-height));
+    --left-bar-width: 265px;
+
+
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: white; */
+
+    display: flex;
 }
 
 /* COMMON */
+
+
+
+/* LEFT-BAR */
+#left-bar{
+    width: var(--left-bar-width);
+    height: var(--scroll-view-height);
+
+    background-color: black;
+}
+
+#site-header{
+    padding: 10px;
+}
+#site-header .wide-view{
+    width: 70%;
+}
+#site-header .small{
+    display: none;
+    width: 100%;
+}
+
+
+
+/* MAIN */
+main{
+    width: calc(100% - var(--left-bar-width));
+    height: var(--scroll-view-height);
+
+    background-color: #141922;
+}
+
+
+/* CONTROLS */
+#controls{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+    width: 100%;
+    height: var(--controls-height);
+
+    background-color: #282828;
+}

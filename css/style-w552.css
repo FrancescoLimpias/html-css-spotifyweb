@@ -1,0 +1,18 @@
+@media screen and (max-width: 552px){
+
+    :root{
+        --left-bar-width: 60px;
+    }
+
+    /* LEFT BAR */
+    #left-bar .wide-view{
+        display: none;
+    }
+
+    /* header */
+    #site-header .small{
+        display: block;
+    }
+
+
+}
