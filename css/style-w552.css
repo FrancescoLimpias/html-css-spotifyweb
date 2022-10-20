@@ -18,5 +18,16 @@
         display: block;
     }
 
+    /* user section */
+    #user-account{
+        --img-nrw-side: 2rem;
+    }
+    #user-account div{
+        text-align: center;
+    }
+    #user-account div:last-child a{
+        justify-content: center;
+    }
+
 
 }

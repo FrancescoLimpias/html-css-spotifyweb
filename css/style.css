@@ -23,6 +23,7 @@ body {
 
 /* LEFT-BAR */
 #left-bar{
+    position: relative;
     --left-bar-padding: 20px;
 
     width: var(--left-bar-width);
@@ -62,12 +63,8 @@ body {
 #main-nav li.active{
     border-color: #adff2f;
 }
-#main-nav a{
-    display: flex;
-    align-items: center;
-}
 #main-nav img{
-    max-height: 2rem;
+    height: 2rem;
     margin-right: 0.2rem;
 }
 
@@ -81,12 +78,43 @@ body {
 #user-playlists > div:first-of-type a{
     color: inherit;
     text-decoration: none;
-    display: flex;
-    align-items: center;
 }
 #user-playlists > div:first-of-type i{
     font-size: 2rem ;
-    margin-right: 0.2rem;
+    margin-right: 0.6rem;
+}
+
+/* user section */
+#user-account{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+
+    width: calc(100%);
+
+    --spacer: 0.4rem;
+    --img-side: 1rem;
+
+    padding: 10px var(--left-bar-padding);
+    font-size: 0.8rem;
+}
+#user-account a{
+    gap: 0.5rem;
+}
+#user-account div:first-child img{
+    height: var(--img-nrw-side, var(--img-side));
+}
+#user-account hr{
+    opacity: 0.5;
+}
+#user-account div:last-child img{
+    height: var(--img-nrw-side, calc(var(--img-side) * 1.5));
+    width: var(--img-nrw-side, calc(var(--img-side) * 1.5));
+
+    /* background-color: #808080; */
+    border-radius: 50%;
+    padding: 1px;
+    border: 1px solid white;
 }
 
 
