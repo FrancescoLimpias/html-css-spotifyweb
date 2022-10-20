@@ -29,6 +29,9 @@ body {
     height: var(--scroll-view-height);
 
     font-size: 1rem;
+    font-weight: 500;
+    color: #898989;
+
     background-color: black;
 }
 
@@ -54,9 +57,17 @@ body {
 }
 #main-nav li:hover{
     border-color:#acff2f7e;
+    color: rgba(255, 255, 255, 0.75);
+}
+#main-nav li:hover img{
+    opacity: 75% ;
 }
 #main-nav li.active{
     border-color: #adff2f;
+    color: white;
+}
+#main-nav li.active img{
+    opacity: 100%;
 }
 #main-nav a{
     display: flex;
@@ -64,7 +75,8 @@ body {
 }
 #main-nav img{
     max-height: 2rem;
-    margin-right: 0.2rem;z
+    margin-right: 0.2rem;
+    opacity: 50%;
 }
 
 

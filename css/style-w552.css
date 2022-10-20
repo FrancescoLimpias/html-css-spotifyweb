@@ -1,16 +1,20 @@
-@media screen and (max-width: 552px){
+@media screen and (max-width: 552px) {
 
-    :root{
+    :root {
         --left-bar-width: 60px;
     }
 
     /* LEFT BAR */
-    #left-bar .wide-view{
+    #left-bar {
+        --left-bar-padding: 10px;
+    }
+
+    #left-bar .wide-view {
         display: none;
     }
 
     /* header */
-    #site-header .small{
+    #site-header .small {
         display: block;
     }
 
