@@ -3,10 +3,15 @@
 :root{
 
     /* layout sizing */
+    --left-bar-width: 265px;
     --controls-height: 100px;
     --scroll-view-height: calc(100vh - var(--controls-height));
-    --left-bar-width: 265px;
 
+    --root-padding: 10px;
+
+    /* palette */
+    --color-accent: #adff2f;
+    --color-dark-accent: #acff2f7e;
 }
 
 body {
@@ -24,7 +29,7 @@ body {
 /* LEFT-BAR */
 #left-bar{
     position: relative;
-    --left-bar-padding: 20px;
+    --left-bar-padding: calc(var(--root-padding) * 2);
 
     width: var(--left-bar-width);
     height: var(--scroll-view-height);
@@ -58,10 +63,10 @@ body {
     border-left: 3px solid black;
 }
 #main-nav li:hover{
-    border-color:#acff2f7e;
+    border-color: var(--color-dark-accent);
 }
 #main-nav li.active{
-    border-color: #adff2f;
+    border-color: var(--color-accent);
 }
 #main-nav img{
     height: 2rem;
@@ -126,6 +131,29 @@ main{
 
     background-color: #141922;
 }
+
+#upgrader{
+    height: calc(var(--controls-height) * 0.75);
+    padding: calc(var(--root-padding) * 2);
+
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#upgrader a{
+    border: 1px solid white;
+    text-transform: uppercase;
+}
+#upgrader a span:last-child{
+    display: none;
+}
+#upgrader a:hover{
+    scale: 1.1;
+    /* border-left: 2px solid var(--color-accent); */
+}
+#upgrader a:hover .accent{
+    display: inline;
+    color: var(--color-accent);
+} 
 
 
 /* CONTROLS */
