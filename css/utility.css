@@ -69,3 +69,14 @@ img{
     text-decoration: none;
     color: currentColor;
 }
+
+
+.selectable-container > *{
+    opacity: 0.5;
+}
+.selectable-container > *:hover{
+    opacity: 0.75;
+}
+.selectable-container > *.active{
+    opacity: 1;
+}
