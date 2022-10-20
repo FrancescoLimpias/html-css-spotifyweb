@@ -30,7 +30,7 @@ body {
 
     font-size: 1rem;
     font-weight: 500;
-    color: #898989;
+    /* color: #898989; */
 
     background-color: black;
 }
@@ -50,6 +50,7 @@ body {
 /* main-nav */
 #main-nav{
     --spacer: 0.5rem;
+    margin-bottom: 2rem;
 }
 #main-nav li{
     padding-left: var(--left-bar-padding);
@@ -57,17 +58,9 @@ body {
 }
 #main-nav li:hover{
     border-color:#acff2f7e;
-    color: rgba(255, 255, 255, 0.75);
-}
-#main-nav li:hover img{
-    opacity: 75% ;
 }
 #main-nav li.active{
     border-color: #adff2f;
-    color: white;
-}
-#main-nav li.active img{
-    opacity: 100%;
 }
 #main-nav a{
     display: flex;
@@ -76,7 +69,24 @@ body {
 #main-nav img{
     max-height: 2rem;
     margin-right: 0.2rem;
-    opacity: 50%;
+}
+
+/* playlist section */
+#user-playlists{
+    --spacer: 1rem;
+}
+#user-playlists{
+    padding-left: var(--left-bar-padding);
+}
+#user-playlists > div:first-of-type a{
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+#user-playlists > div:first-of-type i{
+    font-size: 2rem ;
+    margin-right: 0.2rem;
 }
 
 
