@@ -21,6 +21,11 @@ img{
     max-width: 100%;
 }
 
+hr{
+    border: none;
+    border-top: 1px solid currentColor;
+}
+
 .button{
     padding: 6px 1em;
     border-radius: 20px;
@@ -70,6 +75,11 @@ img{
     color: currentColor;
 }
 
+.destilized-link{
+    text-decoration: none;
+    color: inherit;
+}
+
 
 .selectable-container > *{
     opacity: 0.5;
@@ -79,4 +89,10 @@ img{
 }
 .selectable-container > *.active{
     opacity: 1;
+}
+
+
+.micro-align-center{
+    display: flex;
+    align-items: center;
 }
