@@ -3,28 +3,52 @@
 :root,
 :after,
 :before {
-
-    /* layout sizing */
-    --left-bar-width: 265px;
-    --controls-height: 100px;
-    --scroll-view-height: calc(100vh - var(--controls-height));
-
+        
+    /* COMMON */
     --root-padding: 10px;
-
-    
-    /* gallery sizing */
-    --row-capacity: 6;
-    --gap-size: var(--root-padding);
-    --cover-width: calc(
-        (100%                           /* Totality */
-        - (var(--gap-size)          /* minus gap size*/
-        * (var(--row-capacity) - 1)))   /* per number of gaps */
-        / var(--row-capacity)           /* divided by number of cover per row */
-        );
+    font-size: 14px;
 
     /* palette */
     --color-accent: #adff2f;
     --color-dark-accent: #acff2f7e;
+
+
+
+    /* LEFT BAR */
+    --left-bar-width: 265px;
+
+
+
+    /* CONTROLS */
+    --controls-height: 100px;
+
+
+
+    /* MAIN */
+    --scroll-view-h: calc(100vh - var(--controls-height));
+    
+    /* main sections */
+    --upgrader-height: calc(var(--controls-height) * 0.75);
+    --categories-h: 25px;
+    --galleries-h: calc(
+        var(--scroll-view-h) 
+        - var(--upgrader-height)
+        - var(--categories-h));
+
+
+    /* gallery sizing */
+    --row-capacity: 6;
+    --gap-size: 0.5vw;
+    --cover-width: calc(
+        (100%                           /* Totality */
+        - (var(--gap-size)              /* minus gap size*/
+        * (var(--row-capacity) - 1)))   /* per number of gaps */
+        / var(--row-capacity)           /* divided by number of cover per row */
+        );
+
+
+
+    
 }
 
 body {
@@ -47,7 +71,7 @@ span.description {
     --left-bar-padding: calc(var(--root-padding) * 2);
 
     width: var(--left-bar-width);
-    height: var(--scroll-view-height);
+    height: var(--scroll-view-h);
 
     font-size: 1rem;
     font-weight: 500;
@@ -154,17 +178,18 @@ span.description {
 
 /* MAIN */
 main {
-    --spacer: 1rem;
-
     width: calc(100% - var(--left-bar-width));
-    height: var(--scroll-view-height);
+    height: var(--scroll-view-h);
 
     background-color: #141922;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* upgrader section */
 #upgrader {
-    height: calc(var(--controls-height) * 0.75);
+    height: var(--upgrader-height);
     padding: calc(var(--root-padding) * 2);
 
     justify-content: flex-end;
@@ -182,7 +207,6 @@ main {
 
 #upgrader a:hover {
     scale: 1.1;
-    /* border-left: 2px solid var(--color-accent); */
 }
 
 #upgrader a:hover .accent {
@@ -192,7 +216,8 @@ main {
 
 /* categories */
 #categories {
-    padding: 0 var(--root-padding);
+    flex: 1 0 var(--categories-h);
+    padding: calc(var(--root-padding) * 2);
 }
 
 #categories ul {
@@ -228,10 +253,27 @@ main {
 }
 
 /* galleries */
+.galleries {
+    flex: 0 1 var(--galleries-h);
+    overflow-y: auto;
+}
+.galleries::-webkit-scrollbar {
+    width: 7px;
+}
+.galleries::-webkit-scrollbar-track {
+    background: #080b12;
+}
+.galleries::-webkit-scrollbar-thumb {
+    background: var(--color-dark-accent);
+}
+.galleries::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
 .gallery {
     padding: var(--root-padding);
 }
-.gallery h2{
+.gallery h2 {
     margin-bottom: 0.8rem;
 }
 
@@ -242,25 +284,31 @@ main {
     flex-wrap: wrap;
     gap: var(--gap-size);
 }
+
 .cover {
     flex: 0 0 var(--cover-width);
 
     --spacer: 0.5rem;
     padding: var(--root-padding);
     border-radius: 21px;
-    transition: all 0.5s ease;
+
+    transition: all 0.3s ease;
 
     text-align: center;
 }
-.cover:hover{
+.cover:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-.cover .img-container{
+
+.cover .img-container {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
 }
-.cover:hover .img-container::after{
+.cover.artist .img-container{
+    border-radius: 50%;
+}
+.cover:hover .img-container::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -276,6 +324,13 @@ main {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.cover > h4{
+    font-size: .7rem;
+}
+.cover .description{
+    font-size: .8rem;
+}
+
 
 
 /* CONTROLS */
@@ -286,6 +341,19 @@ main {
 
     width: 100%;
     height: var(--controls-height);
+    padding: var(--root-padding);
 
     background-color: #282828;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* song */
+#song{
+    display: flex;
+}
+#song img{
+    height: calc(var(--controls-height) / 2.5);
 }

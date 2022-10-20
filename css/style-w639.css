@@ -1,0 +1,6 @@
+@media screen and (max-width: 639px){
+
+    :root{
+        --row-capacity: 2;
+    }
+}

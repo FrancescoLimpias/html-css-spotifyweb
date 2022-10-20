@@ -4,13 +4,14 @@
         --left-bar-width: 60px;
     }
 
+    /* common */
+    .wide-view{
+        display: none !important;
+    }
+
     /* LEFT BAR */
     #left-bar {
         --left-bar-padding: 10px;
-    }
-
-    #left-bar .wide-view {
-        display: none;
     }
 
     /* header */
