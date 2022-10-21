@@ -389,13 +389,17 @@ main {
     background-color: #282828;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 1.5rem;
+
+    --side-panel: 0 1 220px
 }
 
 /* song */
 #song {
-    flex: 0 0 225px;
+    flex: var(--side-panel);
+    justify-self: flex-start;
     gap: 10px;
 }
 
@@ -403,17 +407,22 @@ main {
     height: calc(var(--controls-height) / 2);
 }
 
-#song div:first-of-type {
-    padding-right: 1.5rem;
+#song div:first-of-type *{
+    max-width: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #song div:last-child {
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
 /* player */
 #player {
-    flex: 1 0 170px;
+    flex: 0 1 33%;
+    margin: auto;
 
     display: flex;
     flex-direction: row;
@@ -455,7 +464,16 @@ main {
 
 /* audio output */
 #audio-output {
-    flex: 0 0 225px;
+    flex: var(--side-panel);
+    justify-self: flex-end;
 
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+}
+#audio-output div{
+    gap: 1rem;
+}
+#audio-output input{
+    flex: 0 1 80px;
 }

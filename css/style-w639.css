@@ -1,12 +1,16 @@
-@media screen and (max-width: 639px){
+@media screen and (max-width: 639px) {
 
-    :root{
+    :root {
         --row-capacity: 2;
     }
 
     /* CONTROLS */
     /* song */
-    #song div:first-of-type span:first-of-type{
+    #song div:first-of-type span:first-of-type {
         display: block;
+    }
+
+    #song div:last-of-type{
+        flex-direction: column;
     }
 }
