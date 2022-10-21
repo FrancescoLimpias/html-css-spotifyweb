@@ -7,8 +7,7 @@
 
 *,
 *::after,
-*::before
-{
+*::before {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -17,16 +16,26 @@
     /* border: 1px dashed orange; */
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-hr{
+hr {
     border: none;
     border-top: 1px solid currentColor;
 }
 
-.button{
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button {
     padding: 6px 1em;
     border-radius: 20px;
 
@@ -38,61 +47,68 @@ hr{
 
 /* COMMON */
 
-.pager{
+.pager {
     width: 100%;
 }
-.pager > *{
+
+.pager>* {
     margin: 0 auto;
     padding-right: 4%;
     padding-left: 4%;
 
     max-width: 1200px;
 }
-.pager > .narrow{
+
+.pager>.narrow {
     padding-right: 6%;
     padding-left: 6%;
 }
-.pager > .xs.narrow{
+
+.pager>.xs.narrow {
     padding-right: 8%;
     padding-left: 8%;
 }
-.pager > .xxs.narrow{
+
+.pager>.xxs.narrow {
     padding-right: 12%;
     padding-left: 12%;
 }
 
-.height-spacer > *:not(.self-spaced){
+.height-spacer>*:not(.self-spaced) {
     margin-bottom: var(--spacer);
 }
 
 
-.link-list{
+.link-list {
     list-style: none;
     padding-inline-start: 0;
 }
-.link-list a{
+
+.link-list a {
     text-decoration: none;
     color: currentColor;
 }
 
-.destilized-link{
+.destilized-link {
     text-decoration: none;
     color: inherit;
 }
 
 
-.selectable-container > *{
+.selectable-container>* {
     opacity: 0.5;
 }
-.selectable-container > *:hover{
+
+.selectable-container>*:hover {
     opacity: 0.75;
 }
-.selectable-container > *.active{
+
+.selectable-container>*.active {
     opacity: 1;
 }
 
 
-.micro-align-center{
+.micro-align-center {
     display: flex;
     align-items: center;
 }
