@@ -1,9 +1,12 @@
 /* GENERAL SETUP  */
 
-:root,
+:root
+
+/* ,
 :after,
-:before {
-        
+:before  */
+    {
+
     /* COMMON */
     --root-padding: 10px;
     font-size: 14px;
@@ -26,29 +29,29 @@
 
     /* MAIN */
     --scroll-view-h: calc(100vh - var(--controls-height));
-    
+
     /* main sections */
     --upgrader-height: calc(var(--controls-height) * 0.75);
     --categories-h: 25px;
-    --galleries-h: calc(
-        var(--scroll-view-h) 
-        - var(--upgrader-height)
-        - var(--categories-h));
+    --galleries-h: calc(var(--scroll-view-h) - var(--upgrader-height) - var(--categories-h));
 
 
     /* gallery sizing */
     --row-capacity: 6;
     --gap-size: 0.5vw;
-    --cover-width: calc(
-        (100%                           /* Totality */
-        - (var(--gap-size)              /* minus gap size*/
-        * (var(--row-capacity) - 1)))   /* per number of gaps */
-        / var(--row-capacity)           /* divided by number of cover per row */
+    --cover-width: calc((100%
+                /* Totality */
+                - (var(--gap-size)
+                    /* minus gap size*/
+                    * (var(--row-capacity) - 1)))
+            /* per number of gaps */
+            / var(--row-capacity)
+            /* divided by number of cover per row */
         );
 
 
 
-    
+
 }
 
 body {
@@ -63,6 +66,37 @@ body {
 span.description {
     color: rgba(255, 255, 255, 0.5);
 }
+
+.slider {
+    -webkit-appearance: none;
+    height: 5px;
+    
+    background: #5a5a5a;
+    border-radius: 5px;
+    background-image: linear-gradient(#c1c1c1,#c1c1c1);
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #bebebe;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: all .3s ease-in-out;
+}
+.slider::-webkit-slider-thumb:hover {
+    background: #99ff00;
+}
+/* Input Track */
+/* input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+} */
 
 
 /* LEFT-BAR */
@@ -257,15 +291,19 @@ main {
     flex: 0 1 var(--galleries-h);
     overflow-y: auto;
 }
+
 .galleries::-webkit-scrollbar {
     width: 7px;
 }
+
 .galleries::-webkit-scrollbar-track {
     background: #080b12;
 }
+
 .galleries::-webkit-scrollbar-thumb {
     background: var(--color-dark-accent);
 }
+
 .galleries::-webkit-scrollbar-thumb:hover {
     background: var(--color-accent);
 }
@@ -273,6 +311,7 @@ main {
 .gallery {
     padding: var(--root-padding);
 }
+
 .gallery h2 {
     margin-bottom: 0.8rem;
 }
@@ -296,6 +335,7 @@ main {
 
     text-align: center;
 }
+
 .cover:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -305,9 +345,11 @@ main {
     overflow: hidden;
     border-radius: 15px;
 }
-.cover.artist .img-container{
+
+.cover.artist .img-container {
     border-radius: 50%;
 }
+
 .cover:hover .img-container::after {
     position: absolute;
     top: 0;
@@ -324,10 +366,11 @@ main {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.cover > h4{
+.cover>h4 {
     font-size: .7rem;
 }
-.cover .description{
+
+.cover .description {
     font-size: .8rem;
 }
 
@@ -351,9 +394,68 @@ main {
 }
 
 /* song */
-#song{
-    display: flex;
+#song {
+    flex: 0 0 225px;
+    gap: 10px;
 }
-#song img{
-    height: calc(var(--controls-height) / 2.5);
+
+#song img {
+    height: calc(var(--controls-height) / 2);
+}
+
+#song div:first-of-type {
+    padding-right: 1.5rem;
+}
+
+#song div:last-child {
+    gap: 1rem;
+}
+
+/* player */
+#player {
+    flex: 1 0 170px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* nav */
+#player nav{
+    flex: 0 0 100%;
+
+    display: flex;
+    justify-content: center;
+}
+#player nav ul {
+    gap: 1.5rem;
+}
+#player nav li:nth-child(3) i {
+    font-size: 2rem;
+}
+#player nav li:hover i {
+    text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* time bar */
+#time-bar{
+    flex: 0 0 100%;
+
+    justify-content: center;
+    gap: 1rem;
+}
+#time-bar input{
+    flex: 1 0 100px;
+    max-width: 400px;
+}
+
+
+/* audio output */
+#audio-output {
+    flex: 0 0 225px;
+
+    gap: 1rem;
 }

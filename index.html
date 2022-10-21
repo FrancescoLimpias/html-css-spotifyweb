@@ -438,8 +438,13 @@
             </div>
 
             <!-- song attribs -->
-            <div>
-
+            <div class="micro-align-center link-list">
+                <button>
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button>
+                    <i class="fa-regular fa-folder"></i>
+                </button>
             </div>
         </div>
 
@@ -448,38 +453,61 @@
 
             <!-- navigation buttons -->
             <nav>
-                <ul>
-
+                <ul class="micro-align-center link-list">
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-shuffle"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-backward"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-circle-play"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-forward"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="fa-solid fa-repeat"></i>
+                        </button>
+                    </li>
                 </ul>
             </nav>
 
             <!-- play time bar -->
-            <div id="time-bar">
-                <span></span>
-                <div class="slider">
+            <div id="time-bar" class="micro-align-center">
+                <span>0:25</span>
 
-                </div>
-                <span></span>
+                <input type="range" min="1" max="100" value="70" class="slider" id="myRange">
+
+                <span>4:35</span>
             </div>
 
         </div>
 
         <!-- audio output -->
-        <div id="audio-output">
+        <div id="audio-output" class="micro-align-center link-list">
 
             <a href="">
-                <i></i>
+                <i class="fa-solid fa-list"></i>
             </a>
             <a href="">
-                <i></i>
+                <i class="fa-solid fa-desktop"></i>
             </a>
             <a href="">
-                <i></i>
+                <i class="fa-solid fa-volume-high"></i>
             </a>
 
-            <div class="slider">
+            <input type="range" min="1" max="100" value="70" class="slider" id="myRange">
 
-            </div>
         </div>
 
     </div>
