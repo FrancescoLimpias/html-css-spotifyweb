@@ -1,0 +1,6 @@
+@media screen and (max-height: 460px){
+
+    #upgrader{
+        display: none;
+    }
+}
