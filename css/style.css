@@ -403,6 +403,9 @@ main {
 
     --side-panel: 0 1 220px
 }
+#controls button:hover i{
+    text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.8);
+}
 
 /* song */
 #song {
@@ -434,6 +437,16 @@ main {
     gap: 1rem;
 }
 
+#song button .fa-solid{
+    display: none;
+}
+#song button:hover .fa-solid{
+    display: initial;
+}
+#song button:hover .fa-regular{
+    display: none;
+}
+
 /* player */
 #player {
     flex: 0 1 33%;
@@ -461,9 +474,6 @@ main {
 }
 #player nav li:nth-child(3) i {
     font-size: 2rem;
-}
-#player nav li:hover i {
-    text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8);
 }
 
 /* time bar */
